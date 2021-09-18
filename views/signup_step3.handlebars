@@ -1,0 +1,10 @@
+<p>Phone number verified</p>
+
+<p>Please enter your name to create account</p>
+
+<form action="/signup/authenticate" method="post">
+    <input type="hidden" name="phoneNumber" value = {{phoneNumber}}>
+    <input type="text" name="firstName" placeholder="first-name...."/>
+    <input type="text" name="lastName" placeholder="last-name...."/>
+    <input type="submit" value="Sign Up"/>
+</form>

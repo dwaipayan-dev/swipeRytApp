@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    _id: {
-        type: Number,
-        required: true,
-    },
     first_name: String,
     last_name: String,
-    phone_number: String
+    phone_number: {
+        type: String,
+        unique: true
+    }
 });
 
 const User = mongoose.model('User', userSchema);

@@ -1,0 +1,11 @@
+{{#if error}}
+    <p>{{error}}</p>
+{{/if}}
+
+<p>Please enter the otp recieved on number {{phoneNumber}}</p>
+
+<form action="/signup/step3" method="post">
+    <input type="hidden" name="messageId" value = {{msgId}}>
+    <input type="text" name="token" placeholder="OTP..."/>
+    <input type="submit" value="Check Code"/>
+</form>

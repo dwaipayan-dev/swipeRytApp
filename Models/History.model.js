@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const historySchema = new mongoose.Schema({
-    _id: {
-        type: Number,
+    user_phone:{
+        type: String,
         required: true
     },
     image_id:{
