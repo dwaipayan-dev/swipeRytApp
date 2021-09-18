@@ -1,0 +1,10 @@
+{{#if error}}
+    <p>error</p>
+{{/if}}
+
+<p>Please enter your phone number starting with +91 to recieve the otp</p>
+
+<form action="/step2" method="post">
+    <input type="tel" name="number" id="#phonenumber">
+    <input type="submit" value="Send Code">
+</form>
