@@ -5,6 +5,7 @@
 <p>Please enter the otp recieved on your number</p>
 
 <form action="/signin/step3" method="post">
+    <input type="hidden" name="phoneNumber" value = {{phoneNumber}}>
     <input type="hidden" name="messageId" value = {{msgId}}>
     <input type="text" name="token" placeholder="OTP..."/>
     <input type="submit" value="Check Code"/>

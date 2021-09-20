@@ -8,9 +8,12 @@ const app = express();
 //const bodyParser = require('body-parser');
 
 const accountSid = 'AC5f47155b4f11def13c53cc5cc7727a6d' || process.env.TWILIO_ACCOUNT_SID;
-const authToken =  '787c70df2e5b7add992f34f725d8f07c' || process.env.TWILIO_AUTH_TOKEN;
+const authToken =  'c261868e6370a827dd5dd758d0b71d99' || process.env.TWILIO_AUTH_TOKEN;
 const senderPhone = '+18566197111' || process.env.TWILIO_SENDER_PHONE
 const client = require('twilio')(accountSid, authToken);
+
+//load db models
+const User = require('./Models/User.model');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -83,8 +86,16 @@ app.post('/signup/authenticate', async(req, res) =>{
     console.log(phoneNumber);
     console.log({firstName, lastName, phoneNumber});
     //Add to database
-
-    res.status(200).send();
+    let user = new User({first_name: firstName, last_name: lastName, phone_number: phoneNumber});
+    try{
+        await user.save();
+        res.status(200).send("User Registered...");
+    }
+    catch(err){
+        console.log(err);
+        res.status(400).send("User cannot be registered due to " + err);
+    }
+    
 })
 
 //Login APIs
@@ -117,7 +128,6 @@ app.post('/signin/step3', async(req, res)=>{
     .then((message)=>{
         phoneNumber = message.to;
         console.log(phoneNumber)
-        req.session.phoneNumber = phoneNumber;
         //subject to change depending on type og twilio account
         console.log(message.body);
         otp = message.body.substring(38, 42);
@@ -135,7 +145,7 @@ app.post('/signin/step3', async(req, res)=>{
 });
 
 app.post('/signin/authenticate', async(req, res)=>{
-    console.log("Phone number is " + req.session.phoneNumber);
+    console.log("Phone number is " + req.body.phoneNumber);
     res.status(200).send("OK")
 })
 
