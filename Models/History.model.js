@@ -9,7 +9,6 @@ const historySchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    image_URL:String,
     status: String,
     date: {
         type: Date,

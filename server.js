@@ -24,6 +24,7 @@ const SECRET = 'likethat' || process.env.JWT_SECRET
 
 //load db models
 const User = require('./Models/User.model');
+const History = require('./Models/History.model');
 
 //Middlewares
 app.use(cookieParser());
@@ -41,21 +42,82 @@ app.engine('handlebars', handlebars({
 const PORT = 8084;
 
 //test route
+app.post('/test', async(req, res)=>{
+    res.status(200).send("Welcome");
+})
+
 app.get('/home', async(req, res)=>{
     res.render('main', {layout: 'index.handlebars'});
 })
 
+//Main Route
 app.get('/welcome/:imgId', async(req, res)=>{
     const jwtIsValid = validateJwt(req);
-    console.log(jwtIsValid)
+    //console.log(jwtIsValid)
     if(jwtIsValid === 0){
         res.status(400).send("Signup or login to continue....")
     }
     else{
-        res.status(200);
-        res.render('welcome', { layout: 'index.handlebars', imgId: req.params.imgId, firstName: jwtIsValid.firstName, lastName: jwtIsValid.lastName});
+        if(req.params.imgId > 5){
+            res.status(200).send("You have rated all the images...");
+        }
+        else{
+            res.status(200);
+            res.render('welcome', { layout: 'index.handlebars', imgId: req.params.imgId, firstName: jwtIsValid.firstName, lastName: jwtIsValid.lastName});
+        }
+        
     }
 })
+
+//Event Routes(swipedLeft and swipedRight)
+app.post('/swipedRight', async(req, res)=>{
+    const jwtIsValid = validateJwt(req);
+    //console.log(jwtIsValid)
+    if (jwtIsValid === 0) {
+        res.status(400).send("Signup or login to continue....")
+    }
+    else {
+        try{
+            const imgId = req.body.id;
+            console.log("Image Id for selected image is " + imgId);
+            const newEntry = new History({
+                user_phone: jwtIsValid.phoneNumber,
+                image_id: imgId,
+                status: "selected"
+            });
+            await newEntry.save();
+            res.status(200).send(jwtIsValid.firstName + " " + jwtIsValid.lastName + "has selected image with id " + imgId);
+        }
+        catch(err){
+            res.status(400).send("Entry could not be saved due to error " + err);
+        }
+    }
+});
+
+app.post('/swipedLeft', async(req, res)=>{
+    const jwtIsValid = validateJwt(req);
+    //console.log(jwtIsValid)
+    if (jwtIsValid === 0) {
+        res.status(400).send("Signup or login to continue....")
+    }
+    else {
+        try{
+            const imgId = req.body.id;
+            console.log("Image Id for rejected image is " + imgId);
+            const newEntry = new History({
+                user_phone: jwtIsValid.phoneNumber,
+                image_id: imgId,
+                status: "rejected"
+            });
+            await newEntry.save();
+            res.status(200).send(jwtIsValid.firstName + " " + jwtIsValid.lastName + "has rejected image with id " + imgId);
+        }
+        catch(err){
+            res.status(400).send("Entry could not be saved due to error " + err);
+        }
+    }
+});
+
 
 //Signup APIs
 app.get('/signup/step1', async(req, res)=>{
