@@ -10,9 +10,16 @@
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src="../myjs.js"></script>
-    <!--<script>
+    <!--<script src="../myjs.js"></script>-->
+    <script>
         /*
+        document.onload = function(){toWelcome()};
+        
+        function toWelcome() {
+            //window.location.assign("/welcome/1");
+            alert("page is loaded");
+        }
+        */
         $(document).ready(function () {
             $("p").click(function () {
                 $(this).hide()
@@ -22,19 +29,8 @@
                 window.location.assign("/home");
             });
         });
-        */
-        console.log("Hello");
-        $(document).ready(function () {
-            $("img").swipeleft(function () {
-                $(this).hide()
-                //jquery post request to leftswipe and right swipe which would update db
-                let id = parseInt(document.getElementById("imageNo").innerText);
-                console.log(id);
-                //location assign to same url with different image id
-                window.location.assign("/welcome/" + (id + 1));
-    });
-});
-    </script>-->
+        
+    </script>
 
 </head>
 

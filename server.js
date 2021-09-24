@@ -45,14 +45,15 @@ app.get('/home', async(req, res)=>{
     res.render('main', {layout: 'index.handlebars'});
 })
 
-app.get('/welcome', async(req, res)=>{
+app.get('/welcome/:imgId', async(req, res)=>{
     const jwtIsValid = validateJwt(req);
     console.log(jwtIsValid)
     if(jwtIsValid === 0){
         res.status(400).send("Signup or login to continue....")
     }
     else{
-        res.status(200).send("Welcome "+ jwtIsValid.first_name + " " + jwtIsValid.last_name);
+        res.status(200);
+        res.render('welcome', { layout: 'index.handlebars', imgId: req.params.imgId, firstName: jwtIsValid.firstName, lastName: jwtIsValid.lastName});
     }
 })
 
@@ -124,14 +125,17 @@ app.post('/signup/authenticate', async(req, res) =>{
             const token = jwt.sign({
                 phoneNumber: user.phone_number,
                 firstName: user.first_name,
-                last_name: user.last_name
+                lastName: user.last_name
             }, SECRET, {
                 expiresIn: "72h"
             });
 
             console.log("Auth_token is: " + token);
             res.cookie('Authorization', token)
-            res.status(200).send({message: "User Registered...", user: user, token: token});
+            //res.status(200);
+            //res.redirect('/welcome/1');
+            //res.status(200);
+            res.render('simple', {layout: 'redirect.handlebars'});
         }
         catch(err){
             console.log(err);
@@ -193,7 +197,20 @@ app.post('/signin/authenticate', async(req, res)=>{
         let oldUser = await User.findOne({ phone_number: phoneNumber });
         if (oldUser !== null) {
             //jwt auth
-            res.status(200).send("OK");
+            const token = jwt.sign({
+                phoneNumber: oldUser.phone_number,
+                firstName: oldUser.first_name,
+                lastName: oldUser.last_name
+            }, SECRET, {
+                expiresIn: "72h"
+            });
+
+            console.log("Auth_token is: " + token);
+            res.cookie('Authorization', token)
+            //res.status(200).send({msg: "Logged in!!", user: oldUser, token: token});
+            //res.redirect('/welcome/1');
+            //res.status(200);
+            res.render('simple', {layout: 'redirect.handlebars'});
         }
         else {
             res.status(401).send("No such user found. You must sign in first");
