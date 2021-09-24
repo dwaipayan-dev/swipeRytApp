@@ -1,3 +1,8 @@
+
+//read environment variable from .env file
+require('dotenv').config();
+
+
 const express = require('express');
 const cors = require('cors');
 const handlebars = require('express-handlebars');
@@ -12,9 +17,16 @@ const authToken =  'c261868e6370a827dd5dd758d0b71d99' || process.env.TWILIO_AUTH
 const senderPhone = '+18566197111' || process.env.TWILIO_SENDER_PHONE
 const client = require('twilio')(accountSid, authToken);
 
+//For jwt Authorization
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
+const SECRET = 'likethat' || process.env.JWT_SECRET
+
 //load db models
 const User = require('./Models/User.model');
 
+//Middlewares
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
@@ -31,6 +43,17 @@ const PORT = 8084;
 //test route
 app.get('/home', async(req, res)=>{
     res.render('main', {layout: 'index.handlebars'});
+})
+
+app.get('/welcome', async(req, res)=>{
+    const jwtIsValid = validateJwt(req);
+    console.log(jwtIsValid)
+    if(jwtIsValid === 0){
+        res.status(400).send("Signup or login to continue....")
+    }
+    else{
+        res.status(200).send("Welcome "+ jwtIsValid.first_name + " " + jwtIsValid.last_name);
+    }
 })
 
 //Signup APIs
@@ -83,19 +106,38 @@ app.post('/signup/authenticate', async(req, res) =>{
     let firstName = req.body.firstName;
     let lastName = req.body.lastName;
     let phoneNumber = req.body.phoneNumber;
-    console.log(phoneNumber);
-    console.log({firstName, lastName, phoneNumber});
+    //console.log(phoneNumber);
+    //console.log({firstName, lastName, phoneNumber});
     //Add to database
-    let user = new User({first_name: firstName, last_name: lastName, phone_number: phoneNumber});
-    try{
-        await user.save();
-        res.status(200).send("User Registered...");
-    }
-    catch(err){
-        console.log(err);
-        res.status(400).send("User cannot be registered due to " + err);
-    }
     
+    let oldUser = await User.findOne({phone_number: phoneNumber});
+    if(oldUser !== null){
+        console.log(oldUser);
+        res.status(401).send("User already exists....");
+    }
+    else{
+        try{
+            let user = new User({first_name: firstName, last_name: lastName, phone_number: phoneNumber});
+            await user.save();
+            //jwt code
+            //Create jwt token
+            const token = jwt.sign({
+                phoneNumber: user.phone_number,
+                firstName: user.first_name,
+                last_name: user.last_name
+            }, SECRET, {
+                expiresIn: "72h"
+            });
+
+            console.log("Auth_token is: " + token);
+            res.cookie('Authorization', token)
+            res.status(200).send({message: "User Registered...", user: user, token: token});
+        }
+        catch(err){
+            console.log(err);
+            res.status(400).send("User cannot be registered due to " + err);
+        }
+    } 
 })
 
 //Login APIs
@@ -145,8 +187,21 @@ app.post('/signin/step3', async(req, res)=>{
 });
 
 app.post('/signin/authenticate', async(req, res)=>{
-    console.log("Phone number is " + req.body.phoneNumber);
-    res.status(200).send("OK")
+    let phoneNumber = req.body.phoneNumber;
+    //console.log("Phone number is " + req.body.phoneNumber);
+    try{
+        let oldUser = await User.findOne({ phone_number: phoneNumber });
+        if (oldUser !== null) {
+            //jwt auth
+            res.status(200).send("OK");
+        }
+        else {
+            res.status(401).send("No such user found. You must sign in first");
+        }
+    }
+    catch(err){
+        res.status(400).send("Could not log in due to error " + err);
+    }
 })
 
 app.listen(PORT, async()=>{
@@ -157,3 +212,22 @@ app.listen(PORT, async()=>{
         console.log("Could not connect to database due to " + err);
     })
 })
+
+function validateJwt(req){
+    const AuthToken = req.cookies.Authorization || req.query.auth;
+    if(!AuthToken){
+        return 0;
+    }
+    else{
+        try{
+            let decoded = jwt.verify(AuthToken, SECRET);
+            return decoded;
+        }
+        //if JWT expires
+        catch(err){
+            //console.log(err);
+            return 0;
+        }
+        
+    }
+}
