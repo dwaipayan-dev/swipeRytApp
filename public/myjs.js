@@ -12,11 +12,13 @@ $(document).ready(function () {
         }, (data)=>{
             console.log(data);
             
+        }).then(()=>{
+            changed = 1
+            //alert("Rejected");
+            //location assign to same url with different image id
+            window.location.assign("/welcome/" + (id + 1));
         })
-        changed = 1
-        alert("Hello");
-        //location assign to same url with different image id
-        window.location.assign("/welcome/"+(id+1));
+        
 
     });
 
@@ -28,11 +30,11 @@ $(document).ready(function () {
         }, (data)=>{
             console.log(data);
             alert(data);
+        }).then(()=>{
+            changed = 1
+            //location assign to same url with different image id
+            window.location.assign("/welcome/"+(id+1));
         })
-        changed = 1
-        //location assign to same url with different image id
-        window.location.assign("/welcome/"+(id+1));
-
     });
 
     setInterval(()=>{
