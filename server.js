@@ -69,7 +69,7 @@ app.get('/welcome/:imgId', async(req, res)=>{
         }
         else{
             res.status(200);
-            res.render('welcome', { layout: 'index.handlebars', imgId: req.params.imgId, firstName: jwtIsValid.firstName, lastName: jwtIsValid.lastName});
+            res.render('welcome', { layout: 'index.handlebars', imgId: req.params.imgId, firstName: jwtIsValid.firstName, lastName: jwtIsValid.lastName, jwt: req.cookies.Authorization});
         }
         
     }
