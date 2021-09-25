@@ -19,27 +19,6 @@ chai.use(chaiHttp);
 //Now we can call our restful API using http protocol
 
 describe("swipeRyt API", () => {
-
-    /*
-    Test route
-    */
-    /*
-    describe("GET /test", ()=>{
-        it("should return welcome message", function(done){
-             this.timeout(5000);
-             chai.request(server)
-                 .get("/test")
-                 .then((err,response) =>{
-                     console.log(response.body);
-                     response.should.have.status(200);
-                     response.body.should.be.a('string')
-                 done();
-                 }).then().catch(err => {
-                     console.log(err);
-                 })
-        })
-    })
-    */
     it("GET /test should return welcome message", function (done) {
         console.log("INFO");
         chai.request(server).get('/test').end((err, res) => {
@@ -72,7 +51,8 @@ describe("swipeRyt API", () => {
         });
     });
     /*
-    //would pass only once, as duplicate entries not allowed in database
+    //This commented case would pass only once, as duplicate entries not allowed in database
+
     it("POST /signup/authenticate should return empty html(then redirected to main page)", function (done) {
         console.log("INFO");
         chai.request(server).post('/signup/authenticate')
