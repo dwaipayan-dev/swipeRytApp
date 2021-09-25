@@ -1,0 +1,715 @@
+{
+	"info": {
+		"_postman_id": "f84de63d-ce4d-4365-a1db-4202fa19243f",
+		"name": "swipeRyt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signup/step1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://swipe-ryt-by-me-v01.herokuapp.com/signup/step1",
+							"protocol": "https",
+							"host": [
+								"swipe-ryt-by-me-v01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"signup",
+								"step1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1023"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"3ff-XChY4ennkng4iZcTkZF9V8JFJc4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 25 Sep 2021 15:34:16 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>My Awesome App</title>\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\n        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>\n        <!--Mobile JS libraries for swipeleft event-->\n        <link rel=\"stylesheet\" href=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css\">\n        <script src=\"https://code.jquery.com/jquery-1.11.3.min.js\"></script>\n        <script src=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js\"></script>\n        <!--<script src=\"./myjs.js\"></script>-->\n    </head>\n    <body>\n        <p>Please enter your phone number starting with +91 to recieve the otp</p>\n        <form action=\"/signup/step2\" method=\"post\">\n            <input type=\"tel\" name=\"number\" id=\"#phonenumber\" placeholder=\"Telephone no...\">\n            <input type=\"submit\" value=\"Send Code\">\n        </form>\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "signin/step1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://swipe-ryt-by-me-v01.herokuapp.com/signin/step1",
+							"protocol": "https",
+							"host": [
+								"swipe-ryt-by-me-v01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"signin",
+								"step1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1023"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"3ff-fC913KReVHZ2GxmgN/vCpVFeEao\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 25 Sep 2021 15:35:24 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>My Awesome App</title>\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\n        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>\n        <!--Mobile JS libraries for swipeleft event-->\n        <link rel=\"stylesheet\" href=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css\">\n        <script src=\"https://code.jquery.com/jquery-1.11.3.min.js\"></script>\n        <script src=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js\"></script>\n        <!--<script src=\"./myjs.js\"></script>-->\n    </head>\n    <body>\n        <p>Please enter your phone number starting with +91 to recieve the otp</p>\n        <form action=\"/signin/step2\" method=\"post\">\n            <input type=\"tel\" name=\"number\" id=\"#phonenumber\" placeholder=\"Telephone no...\">\n            <input type=\"submit\" value=\"Send Code\">\n        </form>\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "signup/authenticate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phoneNumber",
+									"value": "+918628065859",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "Shyaam",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Rao",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://swipe-ryt-by-me-v01.herokuapp.com/signup/authenticate",
+							"protocol": "https",
+							"host": [
+								"swipe-ryt-by-me-v01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"signup",
+								"authenticate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "Authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Iis5MTg2MjgwNjU4NTkiLCJmaXJzdE5hbWUiOiJTaHlhYW0iLCJsYXN0TmFtZSI6IlJhbyIsImlhdCI6MTYzMjU4NDIyNSwiZXhwIjoxNjMyODQzNDI1fQ.S2lG5NJk-9LLTapN7zy2a4R-JzvuAigKl8O8QxqmeV0; Path=/"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1673"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"689-JknjBHdk0LBRQ7udW5IIPIVIblA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 25 Sep 2021 15:37:05 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>My Awesome App</title>\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\n        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>\n        <!--Mobile JS libraries for swipeleft event-->\n        <link rel=\"stylesheet\" href=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css\">\n        <script src=\"https://code.jquery.com/jquery-1.11.3.min.js\"></script>\n        <script src=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js\"></script>\n    </head>\n    <body>\n        <!--\n        <!DOCTYPE html>\n        <html lang=\"en\">\n            <head>\n                <title>My Awesome App</title>\n                <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\n                <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n                <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>\n                <!Mobile JS libraries for swipeleft event-->\n                <!--<link rel=\"stylesheet\" href=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css\"><script src=\"https://code.jquery.com/jquery-1.11.3.min.js\"></script><script src=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js\"></script>\n                <!<script src=\"../myjs.js\"></script>-->\n                <script>\n        function test(){\n            window.location.assign(\"/welcome/1\");\n        }\n\n        window.onload = test();\n        \n    </script>\n                <!--\n</head><body><p >Hello</p></body>\n\n</html>-->\n\n\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "signin/authenticate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://swipe-ryt-by-me-v01.herokuapp.com/signin/authenticate?phoneNumber=+918628065854",
+							"protocol": "https",
+							"host": [
+								"swipe-ryt-by-me-v01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"signin",
+								"authenticate"
+							],
+							"query": [
+								{
+									"key": "phoneNumber",
+									"value": "+918628065854"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"2a-vRiNE56tZcL9O00nQ9Qf7bLJths\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 25 Sep 2021 15:39:03 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "No such user found. You must sign in first"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phoneNumber",
+									"value": "+918628065854",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://swipe-ryt-by-me-v01.herokuapp.com/signin/authenticate",
+							"protocol": "https",
+							"host": [
+								"swipe-ryt-by-me-v01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"signin",
+								"authenticate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "Authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Iis5MTg2MjgwNjU4NTQiLCJmaXJzdE5hbWUiOiJEd2FpcGF5YW4iLCJsYXN0TmFtZSI6IlZpZHlhbnRhIiwiaWF0IjoxNjMyNTg0Mzg1LCJleHAiOjE2MzI4NDM1ODV9.AyRYfzkM7sRwVKAY9Bvz2hTreuBW3NMqiGiZZGE06As; Path=/"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1673"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"689-JknjBHdk0LBRQ7udW5IIPIVIblA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 25 Sep 2021 15:39:45 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>My Awesome App</title>\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\n        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>\n        <!--Mobile JS libraries for swipeleft event-->\n        <link rel=\"stylesheet\" href=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css\">\n        <script src=\"https://code.jquery.com/jquery-1.11.3.min.js\"></script>\n        <script src=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js\"></script>\n    </head>\n    <body>\n        <!--\n        <!DOCTYPE html>\n        <html lang=\"en\">\n            <head>\n                <title>My Awesome App</title>\n                <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\n                <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n                <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>\n                <!Mobile JS libraries for swipeleft event-->\n                <!--<link rel=\"stylesheet\" href=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css\"><script src=\"https://code.jquery.com/jquery-1.11.3.min.js\"></script><script src=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js\"></script>\n                <!<script src=\"../myjs.js\"></script>-->\n                <script>\n        function test(){\n            window.location.assign(\"/welcome/1\");\n        }\n\n        window.onload = test();\n        \n    </script>\n                <!--\n</head><body><p >Hello</p></body>\n\n</html>-->\n\n\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "welcome/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://swipe-ryt-by-me-v01.herokuapp.com/welcome/1",
+							"protocol": "https",
+							"host": [
+								"swipe-ryt-by-me-v01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"welcome",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2115"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"843-ehxoc122jKHbbXfNCawrtTc4kwM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 25 Sep 2021 15:41:33 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>My Awesome App</title>\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\n        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>\n        <!--Mobile JS libraries for swipeleft event-->\n        <link rel=\"stylesheet\" href=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css\">\n        <script src=\"https://code.jquery.com/jquery-1.11.3.min.js\"></script>\n        <script src=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js\"></script>\n        <script src=\"../myjs.js\"></script>\n        <!--<script>\n        /*\n        $(document).ready(function () {\n            $(\"p\").click(function () {\n                $(this).hide()\n                //jquery post request to leftswipe and right swipe which would update db\n\n                //location assign to same url with different image id\n                window.location.assign(\"/home\");\n            });\n        });\n        */\n        console.log(\"Hello\");\n        $(document).ready(function () {\n            $(\"img\").swipeleft(function () {\n                $(this).hide()\n                //jquery post request to leftswipe and right swipe which would update db\n                let id = parseInt(document.getElementById(\"imageNo\").innerText);\n                console.log(id);\n                //location assign to same url with different image id\n                window.location.assign(\"/welcome/\" + (id + 1));\n    });\n});\n    </script>-->\n\n\n    </head>\n    <body>\n        <h2>Welcome Dwaipayan Vidyanta</h2>\n        <div style = \"text-align: center;\">\n            <input type=\"hidden\" id=\"jwt\" value = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Iis5MTg2MjgwNjU4NTQiLCJmaXJzdE5hbWUiOiJEd2FpcGF5YW4iLCJsYXN0TmFtZSI6IlZpZHlhbnRhIiwiaWF0IjoxNjMyNTg0Mzg1LCJleHAiOjE2MzI4NDM1ODV9.AyRYfzkM7sRwVKAY9Bvz2hTreuBW3NMqiGiZZGE06As>\n            <img src=\"../assets/1.png\" alt=\"Swipe left or right\">\n            <br>\n            <span id = \"imageNo\" >1</span>\n        </div>\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "swipedRight",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://swipe-ryt-by-me-v01.herokuapp.com/swipedRight",
+							"protocol": "https",
+							"host": [
+								"swipe-ryt-by-me-v01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"swipedRight"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"2e-PiIRcE4FnQvQpW+IuxW9PNnh1go\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 25 Sep 2021 15:43:36 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "Dwaipayan Vidyantahas selected image with id 3"
+				}
+			]
+		},
+		{
+			"name": "swipedLeft",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "swipedLeft",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://swipe-ryt-by-me-v01.herokuapp.com/swipedLeft",
+							"protocol": "https",
+							"host": [
+								"swipe-ryt-by-me-v01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"swipedLeft"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"2e-+Vnu7NjI3w4o51olh40a2UEjohU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 25 Sep 2021 15:45:07 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "Dwaipayan Vidyantahas rejected image with id 5"
+				}
+			]
+		},
+		{
+			"name": "history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://swipe-ryt-by-me-v01.herokuapp.com/history",
+							"protocol": "https",
+							"host": [
+								"swipe-ryt-by-me-v01",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"history"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "10524"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"291c-o51hVcK6pEp9rHu9EfD6qrZBRp8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 25 Sep 2021 15:46:43 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>My Awesome App</title>\n        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\n        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>\n        <!--Mobile JS libraries for swipeleft event-->\n        <link rel=\"stylesheet\" href=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css\">\n        <script src=\"https://code.jquery.com/jquery-1.11.3.min.js\"></script>\n        <script src=\"https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js\"></script>\n        <!--<script src=\"./myjs.js\"></script>-->\n    </head>\n    <body>\n        <h2>Here is you Swipe History, Dwaipayan Vidyanta ....</h2>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/1.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">selected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 14:11:08 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/1.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">rejected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 14:55:05 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/3.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">rejected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 14:55:05 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/5.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">rejected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 14:55:05 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/1.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">rejected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:04:00 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/2.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">rejected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:04:00 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/3.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">selected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:04:00 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/4.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">selected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:04:00 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/5.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">rejected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:04:00 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/1.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">rejected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/2.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">selected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/3.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">rejected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/4.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">selected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/5.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">rejected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/1.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">rejected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/2.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">selected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/3.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">selected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/4.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">rejected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/5.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">selected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/1.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">rejected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/2.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">selected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/3.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">rejected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/4.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">rejected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/5.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">selected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/3.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">selected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n        <br>\n        <br>\n        <div class=\"card text-center \" style = \"border-style: solid; width: auto; margin: auto\">\n            <img src=\"../assets/5.png\" class=\"card-img-top\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">rejected</h5>\n                <p class=\"card-text\">You rated this image on Sat Sep 25 2021 15:07:40 GMT+0000 (Coordinated Universal Time)</p>\n            </div>\n        </div>\n        <br>\n        <br>\n    </body>\n</html>"
+				}
+			]
+		}
+	]
+}
