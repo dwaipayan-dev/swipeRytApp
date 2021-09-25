@@ -12,15 +12,15 @@ const connectDB = require('./Utils/connection');
 const app = express();
 //const bodyParser = require('body-parser');
 
-const accountSid = 'AC5f47155b4f11def13c53cc5cc7727a6d' || process.env.TWILIO_ACCOUNT_SID;
-const authToken =  'c261868e6370a827dd5dd758d0b71d99' || process.env.TWILIO_AUTH_TOKEN;
-const senderPhone = '+18566197111' || process.env.TWILIO_SENDER_PHONE
+const accountSid = process.env.TWILIO_ACCOUNT_SID || 'AC5f47155b4f11def13c53cc5cc7727a6d';
+const authToken =  process.env.TWILIO_AUTH_TOKEN || 'c261868e6370a827dd5dd758d0b71d99';
+const senderPhone = process.env.TWILIO_SENDER_PHONE || '+18566197111'
 const client = require('twilio')(accountSid, authToken);
 
 //For jwt Authorization
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-const SECRET = 'likethat' || process.env.JWT_SECRET
+const SECRET = process.env.JWT_SECRET || 'likethat'
 
 //load db models
 const User = require('./Models/User.model');
@@ -39,10 +39,10 @@ app.engine('handlebars', handlebars({
     layoutsDir: __dirname + '/views/layouts'
 }));
 
-const PORT = 8084;
+const PORT = process.env.NODE_PORT || 8084;
 
-//test route
-app.post('/test', async(req, res)=>{
+//test routes(For experimenting)
+app.get('/test', async(req, res)=>{
     res.status(200).send("Welcome");
 })
 
@@ -216,7 +216,7 @@ app.post('/signup/authenticate', async(req, res) =>{
             res.cookie('Authorization', token)
             //res.status(200);
             //res.redirect('/welcome/1');
-            //res.status(200);
+            res.status(200);
             res.render('simple', {layout: 'redirect.handlebars'});
         }
         catch(err){
@@ -256,7 +256,7 @@ app.post('/signin/step3', async(req, res)=>{
     .then((message)=>{
         phoneNumber = message.to;
         console.log(phoneNumber)
-        //subject to change depending on type og twilio account
+        //subject to change depending on type of twilio account
         console.log(message.body);
         otp = message.body.substring(38, 42);
         if(token === otp){
@@ -291,7 +291,7 @@ app.post('/signin/authenticate', async(req, res)=>{
             res.cookie('Authorization', token)
             //res.status(200).send({msg: "Logged in!!", user: oldUser, token: token});
             //res.redirect('/welcome/1');
-            //res.status(200);
+            res.status(200);
             res.render('simple', {layout: 'redirect.handlebars'});
         }
         else {
@@ -301,15 +301,6 @@ app.post('/signin/authenticate', async(req, res)=>{
     catch(err){
         res.status(400).send("Could not log in due to error " + err);
     }
-})
-
-app.listen(PORT, async()=>{
-    console.log('Server listening on ' + PORT + "....");
-    connectDB().then(()=>{
-        console.log("MongoDB connected successfully....")
-    }).catch((err)=>{
-        console.log("Could not connect to database due to " + err);
-    })
 })
 
 function validateJwt(req){
@@ -330,3 +321,24 @@ function validateJwt(req){
         
     }
 }
+
+module.exports = app.listen(PORT, async()=>{
+    console.log('Server listening on ' + PORT + "....");
+    /*
+    connectDB().then(()=>{
+        console.log("MongoDB connected successfully....")
+    }).catch((err)=>{
+        console.log("Could not connect to database due to " + err);
+    })
+    */
+    try{
+        await connectDB();
+        console.log("MongoDB connected successfully....")
+    }
+    catch(err){
+        console.log("Could not connect to database due to " + err);
+    }
+   
+    
+});
+
