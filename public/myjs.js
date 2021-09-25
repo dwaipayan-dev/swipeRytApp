@@ -11,9 +11,10 @@ $(document).ready(function () {
             id: id
         }, (data)=>{
             console.log(data);
-            alert(data);
+            
         })
         changed = 1
+        alert("Hello");
         //location assign to same url with different image id
         window.location.assign("/welcome/"+(id+1));
 
