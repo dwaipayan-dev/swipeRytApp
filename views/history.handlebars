@@ -1,0 +1,14 @@
+<h2>Here is you Swipe History, {{firstName}} {{lastName}} ....</h2>
+{{#each items as | item |}}
+<br>
+<br>
+<div class="card text-center " style = "border-style: solid; width: auto; margin: auto">
+    <img src="../assets/{{item.image_id}}.png" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">{{item.status}}</h5>
+        <p class="card-text">You rated this image on {{item.date}}</p>
+    </div>
+</div>
+<br>
+<br>
+{{/each}}

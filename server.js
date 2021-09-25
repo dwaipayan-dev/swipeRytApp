@@ -50,7 +50,7 @@ app.get('/home', async(req, res)=>{
     res.render('main', {layout: 'index.handlebars'});
 })
 
-//Main Route
+//Main Route. I have only used id to constuct image src as there were only 5 images given. If there are more images. It can easily be resolved by a mongoose collection named 'images' and fetching image based on Id
 app.get('/welcome/:imgId', async(req, res)=>{
     const jwtIsValid = validateJwt(req);
     //console.log(jwtIsValid)
@@ -118,6 +118,26 @@ app.post('/swipedLeft', async(req, res)=>{
     }
 });
 
+//User History Route
+app.get('/history', async(req, res)=>{
+    const jwtIsValid = validateJwt(req);
+    //console.log(jwtIsValid)
+    if (jwtIsValid === 0) {
+        res.status(400).send("Signup or login to continue....")
+    }
+    else{
+        try{
+            //.lean returns json instead of mongoose object
+            let user_history = await History.find({user_phone: jwtIsValid.phoneNumber}).lean();
+            //res.status(200).send(user_history);
+            res.status(200);
+            res.render('history', {layout: 'parent.handlebars', items: user_history, firstName: jwtIsValid.firstName, lastName: jwtIsValid.lastName})
+        }
+        catch(err){
+            res.status(400).send("Query could not be fetched due to err " + err);
+        }
+    }
+})
 
 //Signup APIs
 app.get('/signup/step1', async(req, res)=>{

@@ -12,7 +12,7 @@ const historySchema = new mongoose.Schema({
     status: String,
     date: {
         type: Date,
-        default: Date.now
+        default: new Date()
     }
 });
 
