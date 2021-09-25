@@ -30,7 +30,13 @@ const History = require('./Models/History.model');
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-
+//Cors middleware
+app.use(cors({
+    origin: '*'
+}));
+app.use(cors({
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
 //Serves static files (we need it to import a css file)
 app.use(express.static('public'))
 
