@@ -12,9 +12,9 @@ const connectDB = require('./Utils/connection');
 const app = express();
 //const bodyParser = require('body-parser');
 
-const accountSid = process.env.TWILIO_ACCOUNT_SID || 'AC5f47155b4f11def13c53cc5cc7727a6d';
-const authToken =  process.env.TWILIO_AUTH_TOKEN || 'c261868e6370a827dd5dd758d0b71d99';
-const senderPhone = process.env.TWILIO_SENDER_PHONE || '+18566197111'
+const accountSid = process.env.TWILIO_ACCOUNT_SID || '--auth acc id--';
+const authToken =  process.env.TWILIO_AUTH_TOKEN || '--auth token--';
+const senderPhone = process.env.TWILIO_SENDER_PHONE || '--twilio assigned phone--'
 const client = require('twilio')(accountSid, authToken);
 
 //For jwt Authorization
