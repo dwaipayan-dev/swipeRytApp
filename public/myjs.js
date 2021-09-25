@@ -11,6 +11,7 @@ $(document).ready(function () {
             id: id
         }, (data)=>{
             console.log(data);
+            alert(data);
         })
         changed = 1
         //location assign to same url with different image id
@@ -25,6 +26,7 @@ $(document).ready(function () {
             id: id
         }, (data)=>{
             console.log(data);
+            alert(data);
         })
         changed = 1
         //location assign to same url with different image id
