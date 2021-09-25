@@ -1,0 +1,3 @@
+MONGO_CONNECT_URI: mongodb+srv://dwaipayan:47lb4oFAaLekVLGX@cluster0.ndm6r.mongodb.net/swipeDB?retryWrites=true
+JWT_SECRET: mahapp
+NODE_PORT: 3030

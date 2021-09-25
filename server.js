@@ -328,7 +328,7 @@ function validateJwt(req){
     }
 }
 
-module.exports = app.listen(PORT, async()=>{
+module.exports = app.listen(process.env.PORT || PORT, async()=>{
     console.log('Server listening on ' + PORT + "....");
     /*
     connectDB().then(()=>{
