@@ -29,7 +29,7 @@ $(document).ready(function () {
             id: id
         }, (data)=>{
             console.log(data);
-            alert(data);
+            
         }).then(()=>{
             changed = 1
             //location assign to same url with different image id
