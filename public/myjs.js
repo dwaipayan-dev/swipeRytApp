@@ -2,12 +2,12 @@ console.log("Hello");
 $(document).ready(function () {
     let changed = 0
     let id = parseInt(document.getElementById("imageNo").innerText);
-    let jwt = document.getElementById('jwt').innerText;
+  
     console.log(id);
     $("img").swipeleft(function () {
         $(this).hide()
         //jquery post request to leftswipe and right swipe which would update db
-        $.post("/swipedLeft?auth=" + jwt, {
+        $.post("/swipedLeft", {
             id: id
         }, (data)=>{
             console.log(data);
@@ -25,7 +25,7 @@ $(document).ready(function () {
     $("img").swiperight(function () {
         $(this).hide()
         //jquery post request to leftswipe and right swipe which would update db
-        $.post("/swipedRight?auth=" + jwt, {
+        $.post("/swipedRight", {
             id: id
         }, (data)=>{
             console.log(data);
